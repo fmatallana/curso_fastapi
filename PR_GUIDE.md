@@ -87,7 +87,7 @@ README.md (Raíz)
     ├─→ Dirección de nuevos usuarios
     ├─→ Overview del proyecto
     └─→ Links a app/README.md
-    
+
 app/README.md
     ↓
     ├─→ Documentación técnica detallada

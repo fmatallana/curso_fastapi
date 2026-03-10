@@ -194,14 +194,14 @@ git commit -m "style: formatear código con black"
 def obtener_cliente(cliente_id: int, session: Sessiondep) -> Cliente:
     """
     Obtener un cliente específico por ID.
-    
+
     Args:
         cliente_id: ID del cliente a obtener
         session: Sesión de base de datos
-        
+
     Returns:
         Cliente encontrado
-        
+
     Raises:
         HTTPException: Si el cliente no existe (404)
     """

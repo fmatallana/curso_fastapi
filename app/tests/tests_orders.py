@@ -29,6 +29,7 @@ def test_create_order(client):
     assert response_orders.status_code == status.HTTP_201_CREATED
     response_read_customer = client.get(f"/customers/{customer_id}")
     response_read_product = client.get(f"/products/{product_id}")
+    # de esta manera se ponen los ids dinamicos, primero se crea el response y luego con estas lineas response_read_customer = client.get(f"/customers/{customer_id}") response_read_product = client.get(f"/products/{product_id}") se declaran los ids de forma dinamica para usar arriba
     assert response_read_customer.status_code == status.HTTP_200_OK
     assert response_read_product.status_code == status.HTTP_200_OK
     assert response_orders.json()["total"] == response_product.json()["price"] * 2
@@ -43,4 +44,5 @@ def test_create_order_customer_not_found(client):
             "items": [{"product_id": 1, "quantity": 2}],
         },
     )
+    # esto es un tests de fallo "seguro"
     assert response_orders.status_code == status.HTTP_404_NOT_FOUND
